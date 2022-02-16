@@ -1,7 +1,11 @@
-POST http://localhost:3003/class 
+POST http://localhost:3003/estudante
 Content-Type: application/json
 
 {
-    "nome":"Evaristo",
-    "module": 1
+    "nome":"Pedro",
+    "email":"pedro@labenu.com",
+    "data_nasc": 05-02-1998,
+    "turma_id": "1645038794431", 
+    "hobbies": ["Jogar", "Comer"]
 }
+
