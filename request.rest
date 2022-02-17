@@ -1,22 +1,41 @@
+GET http://localhost:3003/class 
+Content-Type: application/json
 
+###
 
-# POST http://localhost:3003/class 
-# Content-Type: application/json
+POST http://localhost:3003/class 
+Content-Type: application/json
 
-# {
-#     "nome":"Evaristo",
-#     "module": 1
-# }
+{
+    "nome":"Evaristo",
+    "module": 1
+}
 
-
+###
 
 POST http://localhost:3003/docente 
 Content-Type: application/json
 
 {
-    "nome":"Eva",
-    "email": "eva@eva.com", 
-    "data_nasc": "20/02/2000", 
-    "turma_id": "001",
+    "nome":"Gabriel",
+    "email": "gabriel@labenu.com", 
+    "data_nasc": "20/02/1985", 
+    "turma_id": "1645038794431",
+    "especialidades": ["React"]
 }
+
+###
+
+POST http://localhost:3003/estudante 
+Content-Type: application/json
+
+{
+    "nome":"Julio",
+    "email": "julio@labenu.com", 
+    "data_nasc": "20/02/1980", 
+    "turma_id": "1645042174010",
+    "hobbies": ["cozinhar", "ping pong"]
+}
+
+
 
