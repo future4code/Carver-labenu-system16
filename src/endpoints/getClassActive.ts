@@ -9,7 +9,7 @@ export const getClassActive = async (req: Request, res: Response) => {
         .select()
         .where('modulo', '>' ,'0')
 
-        res.status(200).send(result)
+        res.status(200).send({result: result})
     } catch (err: any) {
         res.status(errorCode).send({ message: err.message || err.sqlmessage })
     }
