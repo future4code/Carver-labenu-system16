@@ -37,5 +37,19 @@ Content-Type: application/json
     "hobbies": ["cozinhar", "ping pong"]
 }
 
+###
 
+PUT http://localhost:3003/estudante/1645124121681
+Content-Type: application/json
 
+{
+    "turma_id": "1645042096632"
+}
+
+###
+PUT http://localhost:3003/docente/1645042096632
+Content-Type: application/json
+
+{
+    "turma_id": "1645042174010"
+}
