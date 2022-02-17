@@ -23,7 +23,7 @@ export abstract class Usuario {
     protected id: string, 
     protected nome: string, 
     protected email: string, 
-    protected data_nasc: string,
+    protected data_nasc: Date,
     protected turma_id: string
     ) {}
 
@@ -39,7 +39,7 @@ export abstract class Usuario {
         return this.email
     }
 
-    public getDataNasc(): string {
+    public getDataNasc(): Date {
         return this.data_nasc
     }
 
@@ -53,7 +53,7 @@ export class Estudante extends Usuario{
         id: string,
         nome: string, 
         email: string, 
-        data_nasc: string, 
+        data_nasc: Date, 
         turma_id: string, 
         protected hobbies: string[]
     ){
@@ -70,7 +70,7 @@ export class Docente extends Usuario{
         id: string,
         nome: string, 
         email: string, 
-        data_nasc: string, 
+        data_nasc: Date, 
         turma_id: string, 
         protected especialidades: string[]
     ){
