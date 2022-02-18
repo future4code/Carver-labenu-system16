@@ -79,7 +79,7 @@ PUT http://localhost:3003/class/1645038640169
 Content-Type: application/json
 
 {
-    "modulo": 2
+    "module": 2
 }
 
 
