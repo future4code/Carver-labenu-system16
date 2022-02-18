@@ -1,7 +1,7 @@
 import {Request, Response} from "express"
 import { connection } from "../data/connection"
 
-export const editProfessor = async (req: Request, res: Response) => {
+export const editTeacher = async (req: Request, res: Response) => {
     let errorCode = 400
     try {
         const turma_id =  req.body

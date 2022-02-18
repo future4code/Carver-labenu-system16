@@ -2,20 +2,21 @@ import { Request, Response } from "express"
 import { connection } from "../data/connection"
 import { Docente } from "../types/class"
 
-export const createProfessor = async (req: Request, res: Response) => {
+export const createTeacher = async (req: Request, res: Response) => {
     let errorCode = 400
     try {
         const { nome, email, data_nasc, turma_id, especialidades } = req.body
-        const id = Date.now().toString()
-        const date = data_nasc.split('/')
-        const formatDate = new Date(`${date[2]}-${date[1]}-${date[0]}`)
-        const newProfessor = new Docente(id, nome, email, data_nasc, turma_id, especialidades)
-
+        
         if (!nome || !email || !data_nasc || !turma_id || !especialidades) {
             errorCode = 422
             throw new Error("Informações ausentes, preencha os campos necessários!")
         }
-
+        
+        const id = Date.now().toString()
+        const date = data_nasc.split('/')
+        const formatDate = new Date(`${date[2]}-${date[1]}-${date[0]}`)
+        const newProfessor = new Docente(id, nome, email, formatDate, turma_id, especialidades)
+        
         await connection('Docente')
             .insert({
                 id: newProfessor.getId(),

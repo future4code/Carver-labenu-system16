@@ -6,15 +6,16 @@ export const createStudent = async (req: Request, res: Response) => {
     let errorCode = 400
     try {
         const { nome, email, data_nasc, turma_id, hobbies } = req.body
-        const id = Date.now().toString()
-        const date = data_nasc.split('/')
-        const formatDate = new Date(`${date[2]}-${date[1]}-${date[0]}`)
-        const newStudent = new Estudante(id, nome, email, data_nasc, turma_id, hobbies)
-
+        
         if(!nome || !email || !data_nasc || !turma_id || !hobbies){
             errorCode = 422
             throw new Error("Informações ausentes, preencha os campos necessários!")
         }
+        
+        const id = Date.now().toString()
+        const date = data_nasc.split('/')
+        const formatDate = new Date(`${date[2]}-${date[1]}-${date[0]}`)
+        const newStudent = new Estudante(id, nome, email, formatDate, turma_id, hobbies)
 
         await connection('Estudante')
             .insert({
