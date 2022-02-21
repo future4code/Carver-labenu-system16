@@ -1,12 +1,12 @@
 export class Turma {
     constructor(
-        private id: string, 
-        private nome: string, 
+        private id: string,
+        private nome: string,
         private modulo: number
-    ){}
+    ) { }
 
     public getId(): string {
-        return this.id 
+        return this.id
     }
 
     public getNome(): string {
@@ -20,15 +20,15 @@ export class Turma {
 
 export abstract class Usuario {
     constructor(
-    protected id: string, 
-    protected nome: string, 
-    protected email: string, 
-    protected data_nasc: Date,
-    protected turma_id: string
-    ) {}
+        protected id: string,
+        protected nome: string,
+        protected email: string,
+        protected data_nasc: Date,
+        protected turma_id: string
+    ) { }
 
     public getId(): string {
-        return this.id 
+        return this.id
     }
 
     public getNome(): string {
@@ -48,15 +48,15 @@ export abstract class Usuario {
     }
 }
 
-export class Estudante extends Usuario{
+export class Estudante extends Usuario {
     constructor(
         id: string,
-        nome: string, 
-        email: string, 
-        data_nasc: Date, 
-        turma_id: string, 
+        nome: string,
+        email: string,
+        data_nasc: Date,
+        turma_id: string,
         protected hobbies: string[]
-    ){
+    ) {
         super(id, nome, email, data_nasc, turma_id)
     }
 
@@ -65,15 +65,15 @@ export class Estudante extends Usuario{
     }
 }
 
-export class Docente extends Usuario{
+export class Docente extends Usuario {
     constructor(
         id: string,
-        nome: string, 
-        email: string, 
-        data_nasc: Date, 
-        turma_id: string, 
+        nome: string,
+        email: string,
+        data_nasc: Date,
+        turma_id: string,
         protected especialidades: string[]
-    ){
+    ) {
         super(id, nome, email, data_nasc, turma_id)
     }
 

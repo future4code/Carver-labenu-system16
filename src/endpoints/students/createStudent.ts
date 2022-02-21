@@ -1,20 +1,21 @@
 import { Request, Response } from "express"
-import { connection } from "../data/connection"
-import { Estudante } from "../types/class"
+import { connection } from "../../data/connection"
+import { Estudante } from "../../types/class"
 
-export const createStudent = async (req: Request, res: Response) => {
+export const createStudent = async (req: Request, res: Response): Promise<void> => {
     let errorCode = 400
     try {
         const { nome, email, data_nasc, turma_id, hobbies } = req.body
-        const id = Date.now().toString()
-        const date = data_nasc.split('/')
-        const formatDate = new Date(`${date[2]}-${date[1]}-${date[0]}`)
-        const newStudent = new Estudante(id, nome, email, data_nasc, turma_id, hobbies)
 
-        if(!nome || !email || !data_nasc || !turma_id || !hobbies){
+        if (!nome || !email || !data_nasc || !turma_id || !hobbies) {
             errorCode = 422
             throw new Error("Informações ausentes, preencha os campos necessários!")
         }
+
+        const id = Date.now().toString()
+        const date = data_nasc.split('/')
+        const formatDate = new Date(`${date[2]}-${date[1]}-${date[0]}`)
+        const newStudent = new Estudante(id, nome, email, formatDate, turma_id, hobbies)
 
         await connection('Estudante')
             .insert({
