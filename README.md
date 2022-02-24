@@ -5,8 +5,8 @@ Você estuda na Labenu_ há tanto tempo que já parecem anos, não é? Então, h
 Ele deve possuir, ao menos, as 3 entidades importantes:
 
 1. Estudantes 
-
     Representa estudantes da nossa instituição. Eles devem possuir: id, nome, email, data de nascimento e os principais hobbies dele. 
+    Essa funcionalidade se encontra no endpoint createStudant.ts
 
 2. Docente
 
@@ -21,13 +21,18 @@ Ele deve possuir, ao menos, as 3 entidades importantes:
 As funcionalidades básicas são:
 
 → Criar estudante;
-
+  ***  Essa funcionalidade se encontra no endpoint createStudant.ts ***
 → Criar docente;
-
+   *** Essa funcionalidade se encontra no endpoint createProfessor.ts ***
 → Criar turma;
-
+   *** Essa funcionalidade se encontra no endpoint createClass.ts ***
 → Adicionar estudante na turma;
-
+   *** Essa funcionalidade se encontra no endpoint editStudent.ts ***
 → Adicionar docente na turma;
-
-→ Pegar a idade de algum estudante a partir do id
+   *** Essa funcionalidade se encontra no endpoint editProfessor.ts ***
+→ Pegar as classes com módulo ativo 
+   *** Essa funcionalidade se encontra no endpoint getClassActive.ts, alem de pegar os módulos ativos, realiza a troca de módulo ***
+→ Pegar estudante pelo nome 
+    *** Essa funcionalidade se encontra no endpoint getStudentByName.ts ***
+→ Pegar todos os docentes da tabela
+    *** Essa funcioanlidade de encontra no endpoint getProfessor.ts ***

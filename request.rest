@@ -1,0 +1,85 @@
+GET http://localhost:3003/class 
+Content-Type: application/json
+
+###
+
+GET http://localhost:3003/estudante?name=thay
+Content-Type: application/json
+
+###
+
+GET http://localhost:3003/docente
+Content-Type: application/json
+
+###
+
+POST http://localhost:3003/class 
+Content-Type: application/json
+
+{
+    "nome":"Fico",
+    "module": 8
+}
+
+###
+
+POST http://localhost:3003/docente 
+Content-Type: application/json
+
+{
+    "nome":"Maria",
+    "email": "maria@labenu.com", 
+    "data_nasc": "20/02/1979", 
+    "turma_id": "1645038640169",
+    "especialidades": ["Python"]
+}
+
+###
+
+POST http://localhost:3003/estudante 
+Content-Type: application/json
+
+{
+    "nome":"Artur",
+    "email": "artur@labenu.com", 
+    "data_nasc": "20/02/1999", 
+    "turma_id": "1645042174010",
+    "hobbies": ["futebol"]
+}
+
+###
+
+PUT http://localhost:3003/estudante/1645124121681
+Content-Type: application/json
+
+{
+    "turma_id": "1645042096632"
+}
+
+###
+PUT http://localhost:3003/docente/1645042096632
+Content-Type: application/json
+
+{
+    "turma_id": "1645042174010"
+}
+
+###
+
+PUT http://localhost:3003/docente/1645042096632
+Content-Type: application/json
+
+{
+    "turma_id": "1645042174010"
+}
+
+###
+
+PUT http://localhost:3003/class/1645038640169
+Content-Type: application/json
+
+{
+    "module": 2
+}
+
+
